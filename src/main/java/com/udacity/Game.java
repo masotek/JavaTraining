@@ -151,8 +151,27 @@ public class Game {
     public String checkGameWinner(char [][]grid){
         String result = "None";
         //Student code goes here ...
-
-        
+        if (freeSpots <= 4) {
+            if (grid[0][0] == grid[0][1] && grid[0][1] == grid[0][2] && (grid[0][0] == 'o' || grid[0][0] == 'x')) {
+                result = grid[0][0] + " wins";
+            } else if (grid[1][0] == grid[1][1] && grid[1][1] == grid[1][2] && (grid[1][0] == 'o' || grid[1][0] == 'x')) {
+                result = grid[1][0] + " wins";
+            } else if (grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2] && (grid[2][0] == 'o' || grid[2][0] == 'x')) {
+                result = grid[2][0] + " wins";
+            } else if (grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0] && (grid[0][0] == 'o' || grid[0][0] == 'x')) {
+                result = grid[0][0] + " wins";
+            } else if (grid[0][1] == grid[1][1] && grid[1][1] == grid[2][1] && (grid[0][1] == 'o' || grid[0][1] == 'x')) {
+                result = grid[0][1] + " wins";
+            } else if (grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2] && (grid[0][2] == 'o' || grid[0][2] == 'x')) {
+                result = grid[0][2] + " wins";
+            } else if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2] && (grid[0][0] == 'o' || grid[0][0] == 'x')) {
+                result = grid[0][0] + " wins";
+            } else if (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0] && (grid[0][2] == 'o' || grid[0][2] == 'x')) {
+                result = grid[0][2] + " wins";
+            } else if (freeSpots == 0) {
+                result = "Tie";
+            }
+        }
         return result;
     }
 
